@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+       <pre><code class="language-bash">
+        bash
+        #!/bin/bash
+        # Определение переменных
+        ИМЯ="Пользователь"
+        ДИРЕКТОРИЯ="./test_dir"
+        echo "Привет, $ИМЯ!"
+        # Проверка существования директории, если нет — создание
+        if [ ! -d "$ДИРЕКТОРИЯ" ]; then
+        echo "Создаем директорию $ДИРЕКТОРИЯ..."
+        mkdir -p "$ДИРЕКТОРИЯ"
+        else
+        echo "Директория $ДИРЕКТОРИЯ уже существует."
+        fi
+      </code></pre>
+
+      <pre><code class="language-c">
+      // Объявление функции для подсчета суммы
+int вычеслить_сумму(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Объявление переменных
+    int число1, число2, результат;
+
+    printf("Привет! Это программа на языке C.\n");
+
+    // Запрос данных у пользователя
+    printf("Введите первое целое число: ");
+    scanf("%d", &число1);
+
+    printf("Введите второе целое число: ");
+    scanf("%d", &число2);
+
+    // Вызов функции и сохранение результата
+    результат = вычеслить_сумму(число1, число2);
+
+    // Вывод итогового результата на экран
+    printf("Результат: %d + %d = %d\n", число1, число2, результат);
+
+    return 0; // Признак успешного завершения программы
+}
+      </code></pre>
+
+       <pre><code class="language-php">
+        $a = 1;
+         print_r($a);
+         if($a == 3)echo 1;
+      </code></pre>
+
+      <pre style="width: 500px;">
+      <code id="1233" class="language-javascript">
+          function myScript(){return 356;}
+      </code>
+      </pre>
+      <pre style="width: 500px;">
+        <code class="language-sql">
+          select * from b_users;
+        </code>
+      </pre>
+      <pre style="width: 500px;">
+        <code class="language-php">
+         echo 1112;
+        </code>
+      </pre>
+      <pre style="width: 500px;">
+        <code class="language-nginx">
+          user www-data; # Пользователь и группа для работы NGINX
+          worker_processes auto; # Автоматическое определение числа рабочих процессов
+          pid /var/run/nginx.pid; # Файл с PID процесса
+
+          events {
+              worker_connections 768; # Максимальное количество одновременных соединений
+          }
+        </code>
+      </pre>
+
+
+      <div id="editor-container"></div>
+      <textarea id="hiddenTextarea" name="code" style="display:none;"></textarea>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

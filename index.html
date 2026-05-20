@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+
+
+
+<pre style="width: 500px;">
+        <code class="language-mysql">
+     -- 1. Создание базы данных (если она еще не существует)
+CREATE DATABASE IF NOT EXISTS shop_db;
+USE shop_db;
+
+-- 2. Создание таблицы категорий товаров
+CREATE TABLE IF NOT EXISTS categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(50) NOT NULL
+);
+
+
+        </code>
+      </pre>
+
+      <div id="editor-container"></div>
+      <textarea id="hiddenTextarea" name="code" style="display:none;"></textarea>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

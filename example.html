@@ -1,0 +1,408 @@
+<pre><code class="language-bash">
+        bash
+        #!/bin/bash
+        # Определение переменных
+        ИМЯ="Пользователь"
+        ДИРЕКТОРИЯ="./test_dir"
+        echo "Привет, $ИМЯ!"
+        # Проверка существования директории, если нет — создание
+        if [ ! -d "$ДИРЕКТОРИЯ" ]; then
+        echo "Создаем директорию $ДИРЕКТОРИЯ..."
+        mkdir -p "$ДИРЕКТОРИЯ"
+        else
+        echo "Директория $ДИРЕКТОРИЯ уже существует."
+        fi
+      </code></pre>
+
+<pre><code class="language-c">
+      // Объявление функции для подсчета суммы
+int вычеслить_сумму(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Объявление переменных
+    int число1, число2, результат;
+
+    printf("Привет! Это программа на языке C.\n");
+
+    // Запрос данных у пользователя
+    printf("Введите первое целое число: ");
+    scanf("%d", &число1);
+
+    printf("Введите второе целое число: ");
+    scanf("%d", &число2);
+
+    // Вызов функции и сохранение результата
+    результат = вычеслить_сумму(число1, число2);
+
+    // Вывод итогового результата на экран
+    printf("Результат: %d + %d = %d\n", число1, число2, результат);
+
+    return 0; // Признак успешного завершения программы
+}
+      </code></pre>
+
+<pre><code class="language-php">
+        $a = 1;
+         print_r($a);
+         if($a == 3)echo 1;
+      </code></pre>
+
+<pre><code class="language-csharp">
+      using System;
+using System.Collections.Generic;
+
+// Описание класса "Товар"
+class Product
+{
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+
+    public Product(string name, decimal price)
+    {
+        Name = name;
+        Price = price;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("--- Список покупок на C# ---");
+
+        // Создание списка объектов
+        List<Product> products = new List<Product>
+        {
+            new Product("Ноутбук", 75000.00m),
+            new Product("Мышь", 1500.50m),
+            new Product("Клавиатура", 3200.00m)
+        };
+
+        decimal totalPrice = 0;
+
+        // Цикл для перебора элементов списка
+        foreach (var product in products)
+        {
+            Console.WriteLine($"Товар: {product.Name} | Цена: {product.Price} руб.");
+            totalPrice += product.Price; // Подсчет общей стоимости
+        }
+
+        Console.WriteLine("----------------------------");
+        Console.WriteLine($"Итого к оплате: {totalPrice} руб.");
+    }
+}
+      </code></pre>
+
+<pre><code class="language-cpp">
+#include <iostream>
+#include <vector>
+#include <string>
+
+// Определение класса "Студент"
+class Student {
+private:
+std::string name;
+double grade;
+
+public:
+// Конструктор класса
+Student(std::string studentName, double studentGrade) {
+name = studentName;
+grade = studentGrade;
+}
+
+// Методы для получения данных (геттеры)
+std::string getName() const { return name; }
+double getGrade() const { return grade; }
+};
+
+int main() {
+std::cout << "=== Анализ успеваемости на C++ ===" << std::endl;
+
+// Создание динамического массива объектов
+std::vector<Student> students;
+students.push_back(Student("Анна", 4.8));
+students.push_back(Student("Игорь", 3.5));
+students.push_back(Student("Елена", 5.0));
+
+double totalGrade = 0.0;
+
+// Использование современного цикла-for для перебора элементов
+for (const auto& student : students) {
+std::cout << "Студент: " << student.getName()
+          << " | Средний балл: " << student.getGrade() << std::endl;
+totalGrade += student.getGrade();
+}
+
+// Расчет и вывод среднего балла всей группы
+if (!students.empty()) {
+double average = totalGrade / students.size();
+std::cout << "---------------------------------" << std::endl;
+std::cout << "Средний балл группы: " << average << std::endl;
+}
+
+return 0; // Успешное завершение программы
+}
+
+</code></pre>
+
+<pre style="width: 500px;">
+      <code id="1233" class="language-javascript">
+          function myScript(){return 356;}
+      </code>
+      </pre>
+
+<pre style="width: 500px;">
+        <code class="language-sql">
+          select * from b_users;
+        </code>
+      </pre>
+
+<pre style="width: 500px;">
+        <code class="language-php">
+         echo 1112;
+        </code>
+      </pre>
+
+<pre style="width: 500px;">
+        <code class="language-nginx">
+          user www-data; # Пользователь и группа для работы NGINX
+          worker_processes auto; # Автоматическое определение числа рабочих процессов
+          pid /var/run/nginx.pid; # Файл с PID процесса
+
+          events {
+              worker_connections 768; # Максимальное количество одновременных соединений
+          }
+        </code>
+      </pre>
+
+
+<pre>
+      <code class="language-clojure">
+        clojure(ns clojure-example.core)
+
+;; Определение списка сотрудников (каждый сотрудник — это карта/map)
+(def employees
+  [{:name "Алексей" :department "IT"      :salary 120000}
+   {:name "Мария"   :department "Design"  :salary 95000}
+   {:name "Иван"    :department "IT"      :salary 140000}
+   {:name "Елена"   :department "HR"      :salary 80000}])
+
+;; Функция для фильтрации и расчета средней зарплаты в конкретном отделе
+(defn average-salary-by-dept [emp-list dept-name]
+  ;; 1. Фильтруем сотрудников по нужному отделу
+  (let [filtered-emps (filter #(= (:department %) dept-name) emp-list)
+        ;; 2. Извлекаем только зарплаты
+        salaries      (map :salary filtered-emps)
+        ;; 3. Считаем сумму всех зарплат
+        total-salary  (reduce + salaries)
+        ;; 4. Считаем количество сотрудников в отделе
+        emp-count     (count filtered-emps)]
+
+    ;; Проверяем, нашли ли мы сотрудников, чтобы избежать деления на ноль
+    (if (> emp-count 0)
+      (/ total-salary emp-count)
+      0)))
+
+;; Главная функция (точка входа)
+(defn -main []
+  (println "=== Анализ зарплат на Clojure ===")
+
+  ;; Выводим результат работы функции для IT-отдела
+  (let [it-avg (average-salary-by-dept employees "IT")]
+    (println "Средняя зарплата в IT отделе:" (float it-avg) "руб."))
+
+  ;; Пример работы с неизменяемостью: добавим сотрудника и выведем общее число
+  ;; Исходный список employees при этом НЕ изменится
+  (let [new-employees (conj employees {:name "Ольга" :department "IT" :salary 110000})]
+    (println "Исходное кол-во сотрудников:" (count employees))
+    (println "Новое кол-во в измененной копии:" (count new-employees))))
+
+;; Запуск главной функции (для демонстрации в REPL)
+(-main)
+      </code>
+    </pre>
+
+<pre style="width: 500px;">
+        <code class="language-css">
+        .class{
+            color:red;
+            }
+        </code>
+      </pre>
+
+
+<pre style="width: 500px;">
+        <code class="language-dart">
+       // Определение класса "Задача" (Task)
+class Task {
+  final String title;
+  bool isCompleted;
+  // Именованный параметр в конструкторе с дефолтным значением
+  Task({required this.title, this.isCompleted = false});
+
+  // Метод для переключения статуса задачи
+  void toggleStatus() {
+    isCompleted = !isCompleted;
+  }
+
+  @override
+  String toString() {
+    return '[${isCompleted ? 'X' : ' '}] $title';
+  }
+}
+
+// Главная функция — точка входа в программу
+void main() {
+  print('=== Менеджер задач на Dart ===');
+
+  // Создание списка объектов (динамический массив)
+  final taskList = [
+    Task(title: 'Купить молоко'),
+    Task(title: 'Написать код на Dart', isCompleted: true),
+    Task(title: 'Сделать зарядку'),
+  ];
+
+  // Добавление нового элемента в список
+  taskList.add(Task(title: 'Почитать книгу'));
+
+  // Изменение статуса одной из задач
+  taskList[0].toggleStatus();
+
+  // Вывод всех задач с помощью метода forEach
+  print('\nВсе задачи:');
+  taskList.forEach((task) => print(task));
+
+  // Фильтрация списка с помощью стрелочной функции
+  final completedCount = taskList.where((task) => task.isCompleted).length;
+
+  print('------------------------------');
+  print('Выполнено задач: $completedCount из ${taskList.length}');
+}
+        </code>
+      </pre>
+
+<pre style="width: 500px;">
+        <code class="language-fsharp">
+      --- old_script.py	2026-05-20 14:30:00.000000000 +0300
++++ new_script.py	2026-05-20 14:35:00.000000000 +0300
+@@ -1,8 +1,9 @@
+ def greet_user(name):
+-    print("Привет, " + name)
++    if not name:
++        name = "Гость"
++    print(f"Привет, {name}!")
+
+ def calculate(a, b):
+-    return a * b
++    return a + b
+
+-print("Программа запущена")
+-greet_user("Алексей")
++greet_user("")
+        </code>
+      </pre>
+
+
+
+
+<pre style="width: 500px;">
+        <code class="language-fortran">
+      program ArrayProcessing
+    implicit none  ! Отключает неявное приведение типов (хорошая практика)
+
+    ! Объявление переменных
+    integer, parameter :: size = 5
+    real, dimension(size) :: vector
+    real :: average_value
+    integer :: i
+
+    print *, "=== Анализ данных на Fortran ==="
+
+    ! Инициализация массива значениями
+    do i = 1, size
+        vector(i) = real(i) * 2.5
+    end do
+
+    ! Вывод элементов массива на экран
+    print *, "Элементы массива:"
+    do i = 1, size
+        print '(A, I2, A, F5.1)', "Элемент (", i, ") = ", vector(i)
+    end do
+
+    ! Вызов пользовательской функции для расчета среднего значения
+    average_value = calculate_average(vector, size)
+
+    print *, "---------------------------------"
+    print '(A, F5.2)', "Среднее значение элементов: ", average_value
+
+contains
+
+    ! Описание функции внутри программы
+    function calculate_average(arr, n) result(avg)
+        integer, intent(in) :: n
+        real, dimension(n), intent(in) :: arr
+        real :: avg
+        real :: total_sum
+        integer :: j
+
+        total_sum = 0.0
+        do j = 1, n
+            total_sum = total_sum + arr(j)
+        end do
+
+        avg = total_sum / real(n)
+    end function calculate_average
+
+end program ArrayProcessing
+        </code>
+      </pre>
+
+
+<pre style="width: 500px;">
+        <code class="language-go">
+      package main
+
+import (
+	"fmt"
+)
+
+// Определение структуры "Автомобиль"
+type Car struct {
+	Brand string
+	Model string
+	Year  int
+}
+
+// Метод для структуры Car (аналог метода класса в ООП)
+func (c Car) Info() string {
+	return fmt.Sprintf("%s %s (%d г.)", c.Brand, c.Model, c.Year)
+}
+
+func main() {
+	fmt.Println("=== Автопарк на Go ===")
+
+	// Создание среза (slice) — динамического массива из структур
+	cars := []Car{
+		{Brand: "Toyota", Model: "Camry", Year: 2021},
+		{Brand: "Tesla", Model: "Model 3", Year: 2023},
+		{Brand: "BMW", Model: "M5", Year: 2019},
+	}
+
+	// Добавление нового элемента в срез
+	cars = append(cars, Car{Brand: "Lada", Model: "Vesta", Year: 2024})
+
+	// Цикл для перебора элементов (range возвращает индекс и сам элемент)
+	for i, car := range cars {
+		// Используем метод Info() для вывода информации
+		fmt.Printf("%d. %s\n", i+1, car.Info())
+	}
+
+	fmt.Println("----------------------")
+	fmt.Printf("Всего автомобилей в базе: %d\n", len(cars))
+}
+
+        </code>
+      </pre>
