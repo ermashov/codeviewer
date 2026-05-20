@@ -225,13 +225,13 @@ window.initCodemirrorViewer = initCodemirrorViewer;
 
 
 // Запускаем функцию после полной загрузки DOM-дерева
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const textarea = document.getElementById('hiddenTextarea');
     const container = document.getElementById('editor-container');
 
     window.initCodemirrorTextarea(textarea, container);
     window.initCodemirrorViewer();
 
-});
+});*/
 
 
