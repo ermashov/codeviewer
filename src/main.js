@@ -115,7 +115,10 @@ function initCodemirrorTextarea(textarea, container) {
 function initCodemirrorViewer() {
     const codeBlocks = document.querySelectorAll('pre > code');
     codeBlocks.forEach((codeElement) => {
-       const lang = codeElement.className.replace(/language-/g, "");
+
+        const id = codeElement.parentElement.id;
+
+        const lang = codeElement.className.replace(/language-/g, "");
         const initialText = codeElement.textContent;
 
         const container = document.createElement('div');
@@ -123,9 +126,12 @@ function initCodemirrorViewer() {
 
         codeElement.parentNode.replaceChild(container, codeElement);
 
-       let fn = getExtention(lang);
+        let fn = getExtention(lang);
 
-        new EditorView({
+        if(typeof  window.editorViewerList != "object")
+            window.editorViewerList = [];
+
+        window.editorViewerList[id] = new EditorView({
             state: EditorState.create({
                 doc: initialText,
                 extensions: [
